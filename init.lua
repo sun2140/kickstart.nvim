@@ -4,12 +4,14 @@ vim.g.maplocalleader = ' '
 
 vim.g.have_nerd_font = true
 
-require 'options'
+require 'neovim.configuration.vim-options'
 
-require 'keymap'
+require 'neovim.configuration.keymap'
 
-require 'autocmd'
+require 'neovim.automation.autocmd'
 
 require 'lazy-bootstrap'
 
 require 'lazy-plugins'
+
+require 'neovim.configuration.health-check'
