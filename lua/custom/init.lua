@@ -3,5 +3,6 @@
 --
 -- See the kickstart.nvim README for more information
 return {
-  require 'custom.plugins.gitsigns',
+    require 'custom.plugins.which-key',
+    require 'custom.plugins.gitsigns',
 }
