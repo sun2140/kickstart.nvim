@@ -25,31 +25,6 @@ require('lazy').setup({
   --    require('gitsigns').setup({ ... })
   --
   -- See `:help gitsigns` to understand what the configuration keys do
-  { -- Adds git related signs to the gutter, as well as utilities for managing changes
-    'lewis6991/gitsigns.nvim',
-    auto_attach = true,
-    config = function()
-      require('gitsigns').setup {
-
-        on_attach = function(bufnr)
-          local gitsigns = require 'gitsigns'
-
-          local function map(mode, l, r, opts)
-            opts = opts or {}
-            opts.buffer = bufnr
-            vim.keymap.set(mode, l, r, opts)
-          end
-
-          map('n', '<leader>hn', function()
-            gitsigns.nav_hunk 'next'
-          end)
-          map('n', '<leader>hp', function()
-            gitsigns.nav_hunk 'prev'
-          end)
-        end,
-      }
-    end,
-  },
 
   --  NOTE: Plugins can also be configured to run Lua code when they are loaded.
   --
@@ -738,6 +713,7 @@ require('lazy').setup({
   -- Or use telescope!
   -- In normal mode type `<space>sh` then write `lazy.nvim-plugin`
   -- you can continue same window with `<space>sr` which resumes last telescope search
+  require 'custom.init',
 }, {
   ui = {
     -- If you are using a Nerd Font: set icons to an empty table which will use the
