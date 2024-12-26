@@ -14,14 +14,3 @@ vim.api.nvim_create_autocmd({ 'BufRead', 'BufNewFile' }, {
         vim.opt.expandtab = true
     end,
 })
-
-vim.api.nvim_create_autocmd('BufReadPost', {
-    pattern = '*',
-    callback = function()
-        if vim.lsp.buf.format then
-            vim.lsp.buf.format { async = true }
-        else
-            vim.cmd 'normal gg=G'
-        end
-    end,
-})
