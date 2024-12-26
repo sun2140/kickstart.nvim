@@ -13,36 +13,10 @@ require('lazy').setup({
     require 'plugins.visual-aid.indent-line',
     require 'plugins.automation.formatting',
     require 'plugins.automation.autopairs',
-
-    { -- You can easily change to a different colorscheme.
-        -- Change the name of the colorscheme plugin below, and then
-        -- change the command in the config to whatever the name of that colorscheme is.
-        --
-        -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-        'folke/tokyonight.nvim',
-        priority = 1000, -- Make sure to load this before all the other start plugins.
-        init = function()
-            -- Load the colorscheme here.
-            -- Like many other themes, this one has different styles, and you could load
-            -- any other, such as 'tokyonight-storm', 'tokyonight-moon', or 'tokyonight-day'.
-            vim.cmd.colorscheme 'tokyonight-night'
-
-            -- You can configure highlights by doing something like:
-            vim.cmd.hi 'Comment gui=none'
-        end,
-    },
-
-    --    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
-
+    require 'plugins.themes.tokyonight',
     { -- Collection of various small independent plugins/modules
         'echasnovski/mini.nvim',
         config = function()
-            -- Better Around/Inside textobjects
-            --
-            -- Examples:
-            --  - va)  - [V]isually select [A]round [)]paren
-            --  - yinq - [Y]ank [I]nside [N]ext [Q]uote
-            --  - ci'  - [C]hange [I]nside [']quote
             require('mini.ai').setup { n_lines = 500 }
 
             -- Add/delete/replace surroundings (brackets, quotes, etc.)

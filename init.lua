@@ -5,13 +5,8 @@ vim.g.maplocalleader = ' '
 vim.g.have_nerd_font = true
 
 require 'neovim.configuration.vim-options'
-
 require 'neovim.configuration.keymap'
-
-require 'neovim.automation.autocmd'
-
 require 'lazy-bootstrap'
-
 require 'lazy-plugins'
-
+require 'neovim.automation.autocmd'
 require 'neovim.configuration.health-check'
