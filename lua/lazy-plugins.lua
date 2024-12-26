@@ -4,7 +4,7 @@ require('lazy').setup({
     require 'plugins.git',
     require 'plugins.navigation.finder',
     require 'plugins.navigation.which-key',
-    require 'plugins.navigation.neo-tree',
+    --require 'plugins.navigation.neo-tree',
     require 'plugins.languages-servers.lua',
     require 'plugins.languages-servers.luvit',
     require 'plugins.languages-servers.all-others-lsps',
@@ -17,6 +17,14 @@ require('lazy').setup({
     { -- Collection of various small independent plugins/modules
         'echasnovski/mini.nvim',
         config = function()
+            require('mini.icons').setup()
+            require('mini.files').setup()
+
+            vim.keymap.set('n', '<leader>e', function()
+                local minifiles = require 'mini.files'
+                minifiles.open()
+            end, { desc = '[E]xplore filesystem' })
+
             require('mini.ai').setup { n_lines = 500 }
 
             -- Add/delete/replace surroundings (brackets, quotes, etc.)
