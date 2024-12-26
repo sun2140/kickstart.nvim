@@ -10,7 +10,6 @@ require('lazy').setup({
     require 'plugins.visual-aid.highlight-comment',
     require 'plugins.visual-aid.indent-line',
     require 'plugins.automation.formatting',
-    require 'plugins.automation.autopairs',
     require 'plugins.themes.tokyonight',
     {
         'echasnovski/mini.nvim',
@@ -21,6 +20,7 @@ require('lazy').setup({
             require('mini.surround').setup()
             require('mini.icons').setup()
             require('mini.files').setup()
+            require('mini.pairs').setup()
 
             vim.keymap.set('n', '<leader>e', function()
                 MiniFiles.open()
