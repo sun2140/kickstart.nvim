@@ -9,6 +9,7 @@ require('lazy').setup({
     require 'plugins.languages-servers.luvit',
     require 'plugins.languages-servers.all-others-lsps',
     require 'plugins.autocompletion',
+    require 'plugins.visual-aid.highlight-comment',
     require 'plugins.visual-aid.indent-line',
     require 'plugins.automation.formatting',
     require 'plugins.automation.autopairs',
@@ -31,8 +32,7 @@ require('lazy').setup({
         end,
     },
 
-    -- Highlight todo, notes, etc in comments
-    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
+    --    { 'folke/todo-comments.nvim', event = 'VimEnter', dependencies = { 'nvim-lua/plenary.nvim' }, opts = { signs = false } },
 
     { -- Collection of various small independent plugins/modules
         'echasnovski/mini.nvim',
